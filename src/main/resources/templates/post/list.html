@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/posts/find">
+    <input type="text" name="search">
+    <button>Tìm Tên</button>
+</form>
+
+<a href="/posts/create">
+    Tạo mới
+</a>
+<br>
+<a href="/posts/findtop4">
+    Tìm bài
+</a>
+<br>
+
+<a href="/posts/findlike">
+    Tìm Like
+</a>
+<br>
+<div  th:each="pro : ${posts}" >
+    <span th:text="${pro.title}"></span>
+    <span th:text="${pro.content}"></span>
+    <span th:text="${pro.createAt}"></span>
+    <span th:text="${pro.likes}"></span>
+    <a th:href="@{/posts/edit/__${pro.id}__ }">Sửa</a>
+    <a th:href="@{/posts/delete/__${pro.id}__ }">Xóa</a>
+</div>
+</body>
+</html>
