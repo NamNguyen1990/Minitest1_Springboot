@@ -86,4 +86,5 @@ public class PostController {
         modelAndView.addObject("posts", post);
         return modelAndView;
     }
+
 }

@@ -7,7 +7,9 @@ public interface IGeneralService<T> { // interface sử dụng generic mô tả 
 
     Optional<T> findById(Long id);
 
-    void save(T t);
+    T save(T t);
+
+//    void save(T t);   Bình thường là save để ntn.Muốn test PostMan thì phải chỉnh lại save như trên
 
     void remove(Long id);
 }

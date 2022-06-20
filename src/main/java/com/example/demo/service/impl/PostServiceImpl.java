@@ -25,10 +25,16 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void save(Post post) {
-        postRepository.save(post);
-
+    public Post save(Post post) {
+       return postRepository.save(post);
     }
+
+//    Thông thường là override save như thế này. Muốn test PostMan thì phải chỉnh lại
+//    @Override
+//    public void save(Post post) {
+//        postRepository.save(post);
+//
+//    }
 
     @Override
     public void remove(Long id) {
